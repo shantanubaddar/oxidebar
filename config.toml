@@ -1,0 +1,32 @@
+height = 30
+
+modules_left = ["workspaces"]
+modules_center = []
+modules_right = ["network", "battery", "clock"]
+
+[style]
+background = "#ff0000"
+foreground = "#00ff00"
+accent = "#0000ff"
+warning = "#f9e2af"
+critical = "#f38ba8"
+padding = 10
+module_spacing = 15
+font_size = 12
+
+[module_config.workspaces]
+format = "{idx}"
+show_empty = true
+
+[module_config.battery]
+format = "{icon} {percentage}%"
+show_icon = true
+warning_threshold = 30
+critical_threshold = 15
+
+[module_config.network]
+format = "{icon} {ifname}"
+show_icon = true
+
+[module_config.clock]
+format = "%H:%M:%S"

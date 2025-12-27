@@ -1,0 +1,43 @@
+# WaybarTUI Configuration
+# Place this file at: ~/.config/waybar-tui/config.toml
+
+height = 30
+
+# Module layout (like waybar)
+modules_left = ["workspaces"]
+modules_center = []
+modules_right = ["network", "battery", "clock"]
+
+# Color scheme (Catppuccin Mocha inspired)
+[style]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+accent = "#89b4fa"
+warning = "#f9e2af"
+critical = "#f38ba8"
+padding = 10
+module_spacing = 15
+font_size = 12
+
+# Module-specific configuration
+[module_config.workspaces]
+format = "{idx}"
+show_empty = true
+
+[module_config.battery]
+format = "{icon} {percentage}%"
+show_icon = true
+warning_threshold = 30
+critical_threshold = 15
+
+[module_config.network]
+format = "{icon} {ifname}"
+show_icon = true
+
+[module_config.clock]
+# strftime format string
+# Examples:
+# "%H:%M:%S" = 14:30:45
+# "%I:%M %p" = 02:30 PM
+# "%a %b %d, %H:%M" = Mon Jan 15, 14:30
+format = "%H:%M:%S"
